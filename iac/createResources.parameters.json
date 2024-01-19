@@ -5,9 +5,6 @@
     "env": {
       "value": "1198464"
     },
-    "sqlPassword": {
-      "value": "Demouser@123"
-    },
     "aksLinuxAdminUsername": {
       "value": "localadmin"
     }
