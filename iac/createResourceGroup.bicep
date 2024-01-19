@@ -19,7 +19,6 @@ var rgName = 'contosotraders-1198464'
 resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
   name: rgName
   location: rgLocation
-  tags: rgTags
 }
 
 // outputs
