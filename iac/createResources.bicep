@@ -103,6 +103,7 @@ var acrName = '${prefix}acr${env}'
 
 // load testing service
 var loadTestSvcName = '${prefixHyphenated}-loadtest${env}'
+var logAnalyticsWorkspaceName = '${prefixHyphenated}-loganalytics${env}'
 
 
 // aks cluster
