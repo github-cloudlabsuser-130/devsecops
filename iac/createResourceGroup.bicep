@@ -16,7 +16,7 @@ var rgName = 'contosotraders-${sufixHyphenated}'
 
 // tags
 var rgTags = {
-  Product: prefixHyphenated
+  Product: sufixxHyphenated
   Environment: 'testing'
 }
 
