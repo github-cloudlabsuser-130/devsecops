@@ -5,6 +5,12 @@ targetScope = 'resourceGroup'
 ////////////////////////////////////////////////////////////////////////////////
 
 // common
+@description('A unique environment name (max 6 characters, alphanumeric only).')
+param env string
+
+@secure()
+param sqlPassword string
+
 param resourceLocation string = resourceGroup().location
 
 // tenant
@@ -23,7 +29,6 @@ param sqlServerHostName string = environment().suffixes.sqlServerHostname
 // variables
 ////////////////////////////////////////////////////////////////////////////////
 
-var env = '1198464'
 // key vault
 var kvName = '${prefix}kv${env}'
 var kvSecretNameProductsApiEndpoint = 'productsApiEndpoint'
@@ -34,7 +39,6 @@ var kvSecretNameCartsApiEndpoint = 'cartsApiEndpoint'
 var kvSecretNameCartsDbConnStr = 'cartsDbConnectionString'
 var kvSecretNameImagesEndpoint = 'imagesEndpoint'
 var kvSecretNameUiCdnEndpoint = 'uiCdnEndpoint'
-var logAnalyticsWorkspaceName = '${prefixHyphenated}-loganalytics${env}'
 
 // user-assigned managed identity (for key vault access)
 var userAssignedMIForKVAccessName = '${prefixHyphenated}-mi-kv-access${env}'
@@ -53,13 +57,13 @@ var cartsDbStocksContainerName = 'carts'
 var productsDbServerName = '${prefixHyphenated}-products${env}'
 var productsDbName = 'productsdb'
 var productsDbServerAdminLogin = 'localadmin'
-var productsDbServerAdminPassword = 'Admin@123'
+var productsDbServerAdminPassword = sqlPassword
 
 // sql azure (profiles db)
 var profilesDbServerName = '${prefixHyphenated}-profiles${env}'
 var profilesDbName = 'profilesdb'
 var profilesDbServerAdminLogin = 'localadmin'
-var profilesDbServerAdminPassword = 'Admin@123'
+var profilesDbServerAdminPassword = sqlPassword
 
 // azure container app (carts api)
 var cartsApiAcaName = '${prefixHyphenated}-carts${env}'
@@ -98,6 +102,7 @@ var acrName = '${prefix}acr${env}'
 
 // load testing service
 var loadTestSvcName = '${prefixHyphenated}-loadtest${env}'
+var logAnalyticsWorkspaceName = '${prefixHyphenated}-loganalytics${env}'
 
 
 // aks cluster
