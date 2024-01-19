@@ -2,6 +2,12 @@
   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
+    "env": {
+      "value": "1198464"
+    },
+    "sqlPassword": {
+      "value": "mwgv72RVV*96"
+    },
     "aksLinuxAdminUsername": {
       "value": "localadmin"
     }
