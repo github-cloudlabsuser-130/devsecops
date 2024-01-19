@@ -6,19 +6,12 @@ targetScope = 'subscription'
 
 param rgLocation string = 'eastus'
 
-param prefixHyphenated string = '1198464'
-
 // variables
 ////////////////////////////////////////////////////////////////////////////////
 
 // rg for storage account, service bus, cosmos db & function app
-var rgName = 'contosotraders-${prefixHyphenated}'
+var rgName = 'contosotraders-1198464'
 
-// tags
-var rgTags = {
-  Product: prefixHyphenated
-  Environment: 'testing'
-}
 
 // resource groups
 ////////////////////////////////////////////////////////////////////////////////
