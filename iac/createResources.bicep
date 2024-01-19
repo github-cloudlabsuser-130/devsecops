@@ -8,6 +8,7 @@ targetScope = 'resourceGroup'
 @description('A unique environment name (max 6 characters, alphanumeric only).')
 param env string
 
+@secure()
 param sqlPassword string
 
 param resourceLocation string = resourceGroup().location
