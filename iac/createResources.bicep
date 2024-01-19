@@ -5,7 +5,7 @@ targetScope = 'resourceGroup'
 ////////////////////////////////////////////////////////////////////////////////
 
 // common
-@description('A unique environment name (max 6 characters, alphanumeric only).')
+@description('A unique environment name (max 9 characters, alphanumeric only).')
 param env string
 
 @secure()
@@ -39,6 +39,7 @@ var kvSecretNameCartsApiEndpoint = 'cartsApiEndpoint'
 var kvSecretNameCartsDbConnStr = 'cartsDbConnectionString'
 var kvSecretNameImagesEndpoint = 'imagesEndpoint'
 var kvSecretNameUiCdnEndpoint = 'uiCdnEndpoint'
+var logAnalyticsWorkspaceName = '${prefixHyphenated}-loganalytics${env}'
 
 // user-assigned managed identity (for key vault access)
 var userAssignedMIForKVAccessName = '${prefixHyphenated}-mi-kv-access${env}'
