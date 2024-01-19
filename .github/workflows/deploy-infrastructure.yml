@@ -77,7 +77,7 @@ jobs:
           region: ${{ env.SUB_DEPLOYMENT_REGION }}
           resourceGroupName: ${{ env.RESOURCE_GROUP_NAME }}
           template: ./iac/createResources.bicep
-          parameters: ./iac/createResources.parameters.json env=${{ secrets.ENVIRONMENT }} sqlPassword=${{ secrets.SQL_PASSWORD }}
+          parameters: ./iac/createResources.parameters.json env=${{ secrets.ENVIRONMENT }}
       # Add the logged-in service principal to the key vault access policy
       - name: add service principal to kv access policy
         uses: azure/CLI@v1
