@@ -5,9 +5,6 @@ targetScope = 'resourceGroup'
 ////////////////////////////////////////////////////////////////////////////////
 
 // common
-@description('A unique environment name (max 9 characters, alphanumeric only).')
-param env string
-
 param resourceLocation string = resourceGroup().location
 
 // tenant
@@ -26,6 +23,7 @@ param sqlServerHostName string = environment().suffixes.sqlServerHostname
 // variables
 ////////////////////////////////////////////////////////////////////////////////
 
+var env = '1198464'
 // key vault
 var kvName = '${prefix}kv${env}'
 var kvSecretNameProductsApiEndpoint = 'productsApiEndpoint'
