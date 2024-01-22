@@ -707,15 +707,15 @@ resource ui2stgacc_roledefinition 'Microsoft.Authorization/roleDefinitions@2022-
 // @TODO: Unfortunately, this requires the service principal to be in the owner role for the subscription.
 // This is just a temporary mitigation, and needs to be fixed using a custom role.
 // Details: https://learn.microsoft.com/en-us/answers/questions/287573/authorization-failed-when-when-writing-a-roleassig.html
-resource roleAssignment2 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
-  scope: ui2stgacc
-  name: guid(resourceGroup().id, ui2stgacc_mi.id, ui2stgacc_roledefinition.id)
-  properties: {
-    roleDefinitionId: ui2stgacc_roledefinition.id
-    principalId: ui2stgacc_mi.properties.principalId
-    principalType: 'ServicePrincipal'
-  }
-}
+//resource roleAssignment2 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
+//  scope: ui2stgacc
+ // name: guid(resourceGroup().id, ui2stgacc_mi.id, ui2stgacc_roledefinition.id)
+ // properties: {
+   // roleDefinitionId: ui2stgacc_roledefinition.id
+ //   principalId: ui2stgacc_mi.properties.principalId
+ //   principalType: 'ServicePrincipal'
+ // }
+// }
 
 resource deploymentScript2 'Microsoft.Resources/deploymentScripts@2020-10-01' = {
   name: 'DeploymentScript2'
