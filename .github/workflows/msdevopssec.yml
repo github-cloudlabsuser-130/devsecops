@@ -6,7 +6,7 @@ on:
 
 jobs:
   sample:
-    name: Microsoft Security DevOps Analysis
+    name: "Microsoft Security DevOps Analysis"
 
     # MSDO runs on windows-latest.
     # ubuntu-latest also supported
