@@ -1,4 +1,4 @@
-name: MSDO windows-latest
+name: MSDO-windows-latest
 on:
   push:
     branches:
